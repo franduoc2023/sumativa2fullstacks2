@@ -1,0 +1,115 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Cuaderno de Proyecto</h3>
+            <!-- Pestañas para seleccionar la etapa -->
+            <ul class="nav nav-tabs mb-4" id="etapasProyecto">
+              <li class="nav-item">
+                <button 
+                  class="nav-link"
+                  [class.active]="indiceActual === 0"
+                  (click)="seleccionarPestana(0)"
+                >
+                  Diseño
+                </button>
+              </li>
+              <li class="nav-item">
+                <button 
+                  class="nav-link"
+                  [class.active]="indiceActual === 1"
+                  (click)="seleccionarPestana(1)"
+                >
+                Compra
+                </button>
+              </li>
+              <li class="nav-item">
+                <button 
+                  class="nav-link"
+                  [class.active]="indiceActual === 2"
+                  (click)="seleccionarPestana(2)"
+                >
+                  Instalacion
+                </button>
+                
+              </li>
+              <li class="nav-item">
+                  <button 
+                    class="nav-link"
+                    [class.active]="indiceActual === 3"
+                    (click)="seleccionarPestana(2)"
+                  >
+                    Prueba
+                  </button>
+                  
+                </li>
+                <li class="nav-item">
+                  <button 
+                    class="nav-link"
+                    [class.active]="indiceActual === 2"
+                    (click)="seleccionarPestana(2)"
+                  >
+                    Recepcion final 
+                  </button>
+                  
+                </li>
+            </ul>
+    
+             <div class="tab-content">
+              <!-- Sección para Diseño -->
+              <div *ngIf="indiceActual === 0">
+                <h5>Etapa de Diseño</h5>
+                <p>Cotizacion</p>
+
+                <a href=" " download=" ">
+                  Descargar Cotizacion
+                </a>
+                <br>
+                <br>
+                <p>Propuesta proyecto</p>
+
+                <a href=" " download=" ">
+                  Descargar proyecto
+                </a>
+              </div>
+    
+               <div *ngIf="indiceActual === 1">
+                <h5>Compra</h5>
+                <p>Estamos realizando la compra de todos los materiales para la ejecucion de la hora</p>
+           <progress [value]="progreso" max="100"></progress>
+           <a href=" " download=" ">
+              Descargar Factura
+            </a>
+              </div>
+    
+               <div *ngIf="indiceActual === 2">
+                <h5>Etapa de Compra Materiales</h5>
+                <a href=" " download=" ">
+                  Descargar documento BOM
+                </a>
+              </div>
+    
+               <div *ngIf="indiceActual === 3">
+                <h5>Etapa de Pruebas</h5>
+                <p>Aquí puedes incluir información sobre la etapa de pruebas del proyecto.</p>
+              </div>
+    
+               <div *ngIf="indiceActual === 4">
+                <h5>Otra etapa</h5>
+                <p>Información adicional de esta etapa del proyecto.</p>
+              </div>
+            </div>  
+    
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn btn-secondary btn-lg" (click)="paginaAnterior()">Página Anterior</button>
+              <button class="btn btn-primary btn-lg" (click)="paginaSiguiente()">Página Siguiente</button>
+            </div>
+          </div>  
+        </div>  
+      </div>  
+    </div>  
+  </div> 
+</section>
+  
